@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="恋爱哲学 - 深度解析爱情本质、亲密关系心理学与情感成长指南。探讨爱、性与关系的哲学思考，助你建立更成熟稳固的情感连接。">
+    <meta name="keywords" content="恋爱哲学, 爱情心理学, 亲密关系, 情感成长, 婚恋观">
+    <title>恋爱哲学 - 爱的本质与亲密关系的深度解析</title>
+    <style>
+        :root {
+            --primary-color: #d63384;
+            --primary-light: #f8d7da;
+            --secondary-color: #495057;
+            --accent-color: #6610f2;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #212529;
+            --text-light: #6c757d;
+            --border-radius: 12px;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-md: 0 8px 24px rgba(0,0,0,0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--secondary-color);
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-actions button {
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.2s ease;
+        }
+
+        .header-actions button:hover {
+            background-color: #c02a6f;
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23ffffff" fill-opacity="0.05"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .search-box {
+            background: white;
+            padding: 10px;
+            border-radius: 50px;
+            display: inline-flex;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 50px;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Main Content */
+        main {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--secondary-color);
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10%;
+            height: 80%;
+            width: 5px;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+        }
+
+        .section-more {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Philosophy Grid */
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: #eee;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .card:hover .card-image img {
+            transform: scale(1.05);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: rgba(255,255,255,0.9);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent-color);
+            backdrop-filter: blur(4px);
+        }
+
+        .card-body {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .card-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .author {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .author-avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #ddd;
+        }
+
+        /* Featured Topic (Wide) */
+        .featured-topic {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            box-shadow: var(--shadow-sm);
+            margin-bottom: 80px;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .featured-content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .featured-image {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .topic-label {
+            color: var(--primary-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .featured-content h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            line-height: 1.3;
+        }
+
+        .featured-content p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: white;
+            border-radius: var(--border-radius);
+            padding: 50px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--secondary-color);
+            margin-bottom: 10px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            color: var(--text-light);
+            display: none;
+            padding-top: 10px;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #212529;
+            color: white;
+            padding: 60px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #adb5bd;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #343a40;
+            padding-top: 20px;
+            text-align: center;
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .featured-topic {
+                flex-direction: column;
+            }
+
+            .featured-image {
+                width: 100%;
+                height: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">恋爱<span>哲学</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">核心概念</a></li>
+                    <li><a href="#">关系指南</a></li>
+                    <li><a href="#">心理学视角</a></li>
+                    <li><a href="#">关于我们</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button>订阅周刊</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>爱不仅是感觉，更是一门艺术</h1>
+            <p>探索爱情背后的理性与感性，理解亲密关系中的自我与依恋。在这里，我们用哲学的视角解构情感。</p>
+            <div class="search-box">
+                <input type="text" placeholder="搜索情感话题、心理学理论或关系困惑...">
+                <button aria-label="搜索">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Featured Article -->
+        <section class="featured-topic">
+            <div class="featured-content">
+                <span class="topic-label">深度解读</span>
+                <h2>爱情的辩证法：激情与承诺的博弈</h2>
+                <p>爱情从来不是单一维度的存在。从斯滕伯格的“爱情三角理论”到现代依恋心理学，我们将探讨激情、亲密与承诺如何在一段关系中动态平衡，以及为何许多关系最终死于平淡。</p>
+                <a href="#" style="color: var(--primary-color); font-weight: 600; display: inline-flex; align-items: center; gap: 5px;">
+                    阅读完整分析 
+                    <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
+            </div>
+            <div class="featured-image">
+                <img src="https://picsum.photos/seed/love_philosophy/600/400" alt="情侣在夕阳下思考">
+            </div>
+        </section>
+
+        <!-- Core Concepts Grid -->
+        <section id="concepts">
+            <div class="section-header">
+                <h2 class="section-title">核心概念解析</h2>
+                <a href="#" class="section-more">查看全部 →</a>
+            </div>
+            
+            <div class="grid-container">
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">依恋理论</span>
+                        <img src="https://picsum.photos/seed/attachment/400/300" alt="依恋理论示意图">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">安全型依恋：建立健康关系的基石</h3>
+                        <p class="card-excerpt">了解你的依恋类型如何影响伴侣选择。安全型依恋并非天生，而是可以通过觉察和练习培养的能力。</p>
+                        <div class="card-meta">
+                            <span class="author">
+                                <div class="author-avatar"></div>
+                                心理专栏
+                            </span>
+                            <span>5 分钟阅读</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">博弈论</span>
+                        <img src="https://picsum.photos/seed/game_theory/400/300" alt="博弈论思维导图">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">囚徒困境与亲密关系：如何避免背叛循环</h3>
+                        <p class="card-excerpt">将博弈论应用于两性关系，探讨信任的建立机制，以及如何在零和博弈中寻找双赢的相处模式。</p>
+                        <div class="card-meta">
+                            <span class="author">
+                                <div class="author-avatar"></div>
+                                逻辑情感
+                            </span>
+                            <span>8 分钟阅读</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">存在主义</span>
+                        <img src="https://picsum.photos/seed/existential/400/300" alt="存在主义哲学思考">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">萨特与波伏娃：自由与责任的亲密契约</h3>
+                        <p class="card-excerpt">重温存在主义经典，探讨在一段关系中，两个独立灵魂如何通过“相互承认”来确认彼此的存在。</p>
+                        <div class="card-meta">
+                            <span class="author">
+                                <div class="author-avatar"></div>
+                                书院
+                            </span>
+                            <span>12 分钟阅读</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Practical Guide -->
+        <section id="guides">
+            <div class="section-header">
+                <h2 class="section-title">关系实践指南</h2>
+                <a href="#" class="section-more">查看全部 →</a>
+            </div>
+            
+            <div class="grid-container">
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">沟通技巧</span>
+                        <img src="https://picsum.photos/seed/communication/400/300" alt="有效沟通">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">非暴力沟通在冲突解决中的应用</h3>
+                        <p class="card-excerpt">当争吵发生时，如何运用观察、感受、需要和请求这四个步骤，将对抗转化为理解。</p>
+                        <div class="card-meta">
+                            <span class="author">
+                                <div class="author-avatar"></div>
+                                互动指南
+                            </span>
+                            <span>4 分钟阅读</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">自我成长</span>
+                        <img src="https://picsum.photos/seed/self_growth/400/300" alt="个人成长">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">先爱自己，再爱别人：一种怎样的哲学？</h3>
+                        <p class="card-excerpt">重新审视“自爱”的定义，区分自私与自我关怀，明白只有内心丰盈的人才能给予高质量的爱。</p>
+                        <div class="card-meta">
+                            <span class="author">
+                                <div class="author-avatar"></div>
+                                情感疗愈
+                            </span>
+                            <span>6 分钟阅读</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image">
+                        <span class="card-tag">长期关系</span>
+                        <img src="https://picsum.photos/seed/longterm/400/300" alt="长期关系">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">从激情到陪伴：亲密关系的升华之路</h3>
+                        <p class="card-excerpt">探讨长期关系中激情褪去后的危机，以及如何通过共同成长和深度交流让关系历久弥新。</p>
+                        <div class="card-meta">
+                            <span class="author">
+                                <div class="author-avatar"></div>
+                                婚恋观察
+                            </span>
+                            <span>7 分钟阅读</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq-section">
+            <div class="section-header" style="margin-bottom: 30px;">
+                <h2 class="section-title">常见困惑解答</h2>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">什么是“无条件的爱”？</div>
+                <div class="faq-answer">
+                    无条件的爱并非指没有底线，而是指在对方犯错或不符合期待时，依然能看到对方作为独立个体的价值，并愿意提供支持而非单纯的指责。这是一种基于尊重而非控制的爱。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">为什么我总是爱上“错”的人？</div>
+                <div class="faq-answer">
+                    这往往与我们的“内在小孩”或早期的依恋模式有关。我们潜意识里会寻找那些能弥补童年缺失的人，即使对方并不适合长期相处。通过自我觉察，可以打破这个循环。
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">如何判断一段关系是否值得继续？</div>
+                <div class="faq-answer">
+                    评估一段关系，不应只看当下的快乐，更要看冲突时的处理方式、成长的一致性以及你是否在关系中成为了更好的自己。健康的长期关系应让双方感到安全与赋能。
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>恋爱哲学</h4>
+                    <p style="color: #adb5bd; font-size: 0.9rem;">
+                        致力于探索爱情背后的理性逻辑与感性体验，为现代人的亲密关系提供深度思考与实用建议。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>栏目导航</h4>
+                    <ul>
+                        <li><a href="#">核心概念</a></li>
+                        <li><a href="#">关系指南</a></li>
+                        <li><a href="#">心理学视角</a></li>
+                        <li><a href="#">经典著作</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关于</h4>
+                    <ul>
+                        <li><a href="#">编辑团队</a></li>
+                        <li><a href="#">投稿指南</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                        <li><a href="#">联系我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 恋爱哲学. All rights reserved. 本站内容仅供学习交流，不构成专业心理咨询建议。</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <script>
+        // FAQ Accordion Logic
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                question.addEventListener('click', () => {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+        });
+    </script>
+</body>
+                  </html>
