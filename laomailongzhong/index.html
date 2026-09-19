@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老迈龙钟 - 健康养生与老年生活指南</title>
+    <meta name="description" content="老迈龙钟提供专业的老年人健康养生、慢病管理、康复护理及老年生活资讯。致力于帮助中老年群体了解衰老科学，保持身心活力。">
+    <meta name="keywords" content="老迈龙钟, 老年健康, 养生保健, 慢病管理, 康复护理, 老年生活">
+    <style>
+        :root {
+            --primary-color: #5D4037;
+            --secondary-color: #8D6E63;
+            --accent-color: #D7CCC8;
+            --bg-color: #FAFAFA;
+            --text-main: #333333;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--secondary-color);
+            border-radius: 2px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        .header-cta {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .header-cta:hover {
+            background-color: #4E342E;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #efebe9 0%, #ffffff 100%);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-light);
+            max-width: 700px;
+            margin: 0 auto 40px;
+        }
+
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto;
+            display: flex;
+            background: var(--white);
+            border-radius: 30px;
+            padding: 5px;
+            box-shadow: var(--shadow);
+        }
+
+        .search-box input {
+            flex: 1;
+            border: none;
+            padding: 12px 20px;
+            font-size: 1rem;
+            outline: none;
+            border-radius: 30px;
+        }
+
+        .search-box button {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
+        }
+
+        .search-box button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .info-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .info-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .info-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        /* Health Articles */
+        .content-section {
+            padding: 80px 0;
+        }
+
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+        }
+
+        .article-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.3s;
+        }
+
+        .article-card:hover {
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .article-img {
+            width: 100%;
+            height: 200px;
+            background-color: #ddd;
+            object-fit: cover;
+        }
+
+        .article-body {
+            padding: 25px;
+        }
+
+        .article-tag {
+            font-size: 0.8rem;
+            color: var(--secondary-color);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .article-title {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .article-excerpt {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--primary-color);
+            font-weight: bold;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Symptom Checker */
+        .symptom-section {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .symptom-section h2 {
+            margin-bottom: 20px;
+        }
+
+        .symptom-section p {
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn-white {
+            background-color: var(--white);
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .btn-white:hover {
+            transform: scale(1.05);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: 80px 0;
+            background-color: var(--bg-color);
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            margin-bottom: 15px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-light);
+            display: none;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question {
+            color: var(--secondary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #3E2723;
+            color: #D7CCC8;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+            .section-title {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">老迈<span>龙钟</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#health">健康养生</a></li>
+                    <li><a href="#care">慢病护理</a></li>
+                    <li><a href="#lifestyle">生活指南</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="header-cta">预约咨询</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>面对老迈龙钟，我们更有备无患</h1>
+                <p>科学的衰老认知，专业的健康管理，让晚年生活更有质量。我们关注老年人的身心健康，提供实用的生活建议。</p>
+                <div class="search-box">
+                    <input type="text" placeholder="搜索症状、疾病或养生知识...">
+                    <button>搜索</button>
+                </div>
+
+                <div class="info-grid">
+                    <article class="info-card">
+                        <span class="info-icon">🩺</span>
+                        <h3>症状自查</h3>
+                        <p>出现老迈龙钟、行动不便或记忆力减退时，如何快速判断是否需要就医？</p>
+                    </article>
+                    <article class="info-card">
+                        <span class="info-icon">💊</span>
+                        <h3>慢病管理</h3>
+                        <p>高血压、糖尿病等慢性病如何科学用药与饮食控制？专家为您解读。</p>
+                    </article>
+                    <article class="info-card">
+                        <span class="info-icon">🧘</span>
+                        <h3>康复训练</h3>
+                        <p>适合老年人的适度运动与康复锻炼方法，保持身体机能活跃。</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Health Articles -->
+        <section id="health" class="content-section">
+            <div class="container">
+                <h2 class="section-title">健康养生专题</h2>
+                <div class="article-grid">
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/elderly1/400/250" alt="老年人饮食" class="article-img">
+                        <div class="article-body">
+                            <span class="article-tag">饮食营养</span>
+                            <h3 class="article-title">老年人饮食指南：少盐少油，均衡营养</h3>
+                            <p class="article-excerpt">随着年龄增长，消化系统功能减弱。本文详细介绍适合老年人的膳食结构，如何补充优质蛋白与钙质。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/elderly2/400/250" alt="睡眠质量" class="article-img">
+                        <div class="article-body">
+                            <span class="article-tag">睡眠健康</span>
+                            <h3 class="article-title">改善老年人睡眠质量的有效方法</h3>
+                            <p class="article-excerpt">睡眠障碍在老年人中很常见。通过调整作息、睡前环境及心理调节，可以有效提升睡眠深度。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/elderly3/400/250" alt="心理关怀" class="article-img">
+                        <div class="article-body">
+                            <span class="article-tag">心理调适</span>
+                            <h3 class="article-title">应对孤独感：老年人社交与心理健康</h3>
+                            <p class="article-excerpt">老迈龙钟不仅是身体机能的下降，心理状态的维护同样重要。建立社交圈，培养兴趣爱好是关键。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                    <article class="article-card">
+                        <img src="https://picsum.photos/seed/elderly4/400/250" alt="跌倒预防" class="article-img">
+                        <div class="article-body">
+                            <span class="article-tag">安全防护</span>
+                            <h3 class="article-title">居家环境改造：预防跌倒的最佳方案</h3>
+                            <p class="article-excerpt">跌倒是老年伤害的主要原因。本文提供家居改造清单，确保居住环境安全。</p>
+                            <a href="#" class="read-more">阅读全文 &rarr;</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Symptom Checker CTA -->
+        <section class="symptom-section">
+            <div class="container">
+                <h2>感觉身体不适？</h2>
+                <p>如果您或家人出现行动迟缓、反应迟钝、关节疼痛等症状，请点击下方按钮进行初步症状评估，或咨询专业医生。</p>
+                <button class="btn-white">开始症状自查</button>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <div class="container">
+                <h2 class="section-title">常见问题解答</h2>
+                <div class="faq-container">
+                    <div class="faq-item">
+                        <div class="faq-question">什么是“老迈龙钟”的典型表现？</div>
+                        <div class="faq-answer">
+                            “老迈龙钟”通常形容人年老体衰、行动迟缓、步履蹒跚的状态。典型表现包括记忆力下降、视力听力减退、关节僵硬、肌肉力量减弱以及反应速度变慢。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何延缓身体机能的衰退？</div>
+                        <div class="faq-answer">
+                            延缓衰老需要综合管理。包括坚持适度的有氧运动（如散步、太极拳）、保持均衡的营养摄入、保证充足的睡眠、参与社交活动以及定期进行体检。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">老年人适合什么样的运动？</div>
+                        <div class="faq-answer">
+                            老年人应避免剧烈对抗性运动和大幅度跳跃动作。推荐的运动包括散步、慢跑、游泳、太极拳、瑜伽和简单的力量训练，以增强骨骼和肌肉。
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">什么时候应该带老人去看医生？</div>
+                        <div class="faq-answer">
+                            如果发现老人突然出现步态不稳、言语含糊不清、严重记忆力丧失或性格突变，应立即就医。此外，长期服药后的身体不适也需及时咨询医生。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于老迈龙钟</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.8;">老迈龙钟致力于为中老年群体提供权威、科学的健康资讯与生活服务。我们关注每一个细节，守护您的健康晚年。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>健康栏目</h4>
+                    <ul>
+                        <li><a href="#">慢病管理</a></li>
+                        <li><a href="#">康复护理</a></li>
+                        <li><a href="#">营养膳食</a></li>
+                        <li><a href="#">心理健康</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>生活指南</h4>
+                    <ul>
+                        <li><a href="#">居家安全</a></li>
+                        <li><a href="#">智能设备</a></li>
+                        <li><a href="#">旅游出行</a></li>
+                        <li><a href="#">法律援助</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系我们</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：support@laomelongzhong.com</li>
+                        <li>地址：健康大道888号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 老迈龙钟健康服务平台 版权所有</p>
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+    <script>
+        // Simple FAQ Accordion Logic
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // Smooth Scroll for Navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+  </html>
